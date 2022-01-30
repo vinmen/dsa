@@ -139,6 +139,7 @@ namespace dsa
 
             Console.WriteLine(MaxSubArraySum.GetSum(new int[] {5,4,-1,7,8}));
             Console.WriteLine(MaxSubArraySum.GetSum2(new int[] {5,4,-1,7,8}));
+            Console.WriteLine(MaxSubArraySum.GetSum3(new int[] {5,4,-1,7,8}));
         }
 
     }
