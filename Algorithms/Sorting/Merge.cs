@@ -11,7 +11,7 @@ namespace dsa.Algorithms.Sorting
         private static int[] SortHelper(int[] input, int start, int end)
         {  
             if(start >= end)
-                return null;     
+                return new int[] {input[start]};     
 
             int mid = (end - start) / 2;            
             int[] part1 = SortHelper(input, start, mid);
