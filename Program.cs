@@ -2,7 +2,7 @@
 
 using dsa.DataStructures;
 using dsa.Problems;
-using dsa.Algorithms;
+using dsa.Algorithms.Sorting;
 
 namespace dsa
 {
@@ -137,8 +137,22 @@ namespace dsa
             //Console.WriteLine("");
             //Console.WriteLine(ReverseString.Reverse("Hello"));
 
-            Console.WriteLine(MaxSubArraySum.GetSum(new int[] {5,4,-1,7,8}));
-            Console.WriteLine(MaxSubArraySum.GetSum2(new int[] {5,4,-1,7,8}));
+            //Console.WriteLine(MaxSubArraySum.GetSum(new int[] {5,4,-1,7,8}));
+            //Console.WriteLine(MaxSubArraySum.GetSum2(new int[] {5,4,-1,7,8}));
+
+            int[] input = { 10, 8, 9, 5 };
+            foreach(var i in input)
+            {
+               Console.Write(i + "\t");
+            }
+            Console.WriteLine("");
+
+            int[] output = Merge.Sort(input);
+            foreach (var i in output)
+            {
+               Console.Write(i + "\t");
+            }
+
         }
 
     }
