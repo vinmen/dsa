@@ -2,7 +2,7 @@ namespace dsa.Problems
 {
     public static class MaxSubArraySum
     {
-        // Iterative method - TLE for large inputs
+        // Iteractive method - TLE for large inputs
         public static int GetSum(int[] nums) 
         {
             //[-1,2,3,0,-3,-2,1]
@@ -54,5 +54,24 @@ namespace dsa.Problems
             return max_sum;
         }
 
+        //Kadane's Algorithm
+        public static int GetSum3(int[] nums)
+        {
+            int max_sum = int.MinValue;
+            int temp_sum = 0;            
+
+            for(int i = 0; i < nums.Length; i++)
+            {   
+                temp_sum = temp_sum + nums[i];
+
+                if(temp_sum > max_sum)
+                    max_sum = temp_sum;
+
+                if(temp_sum < 0)
+                    temp_sum = 0;                
+            }
+
+            return max_sum;
+        }
     }
 }
