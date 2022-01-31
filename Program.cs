@@ -137,9 +137,9 @@ namespace dsa
             //Console.WriteLine("");
             //Console.WriteLine(ReverseString.Reverse("Hello"));
 
-<<<<<<< HEAD
             //Console.WriteLine(MaxSubArraySum.GetSum(new int[] {5,4,-1,7,8}));
             //Console.WriteLine(MaxSubArraySum.GetSum2(new int[] {5,4,-1,7,8}));
+            //Console.WriteLine(MaxSubArraySum.GetSum3(new int[] {5,4,-1,7,8}));
 
             int[] input = { 10, 8, 9, 5 };
             foreach(var i in input)
@@ -152,13 +152,7 @@ namespace dsa
             foreach (var i in output)
             {
                Console.Write(i + "\t");
-            }
-
-=======
-            Console.WriteLine(MaxSubArraySum.GetSum(new int[] {5,4,-1,7,8}));
-            Console.WriteLine(MaxSubArraySum.GetSum2(new int[] {5,4,-1,7,8}));
-            Console.WriteLine(MaxSubArraySum.GetSum3(new int[] {5,4,-1,7,8}));
->>>>>>> 9c1260d00a6db671c89836893e75d0c5fe23704c
+            }            
         }
 
     }
