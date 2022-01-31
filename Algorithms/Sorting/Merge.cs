@@ -10,10 +10,10 @@ namespace dsa.Algorithms.Sorting
 
         private static int[] SortHelper(int[] input, int start, int end)
         {  
-            if(start >= end)
+            if(start == end)
                 return new int[] {input[start]};     
 
-            int mid = (end - start) / 2;            
+            int mid = start + (end - start) / 2;            
             int[] part1 = SortHelper(input, start, mid);
             int[] part2 = SortHelper(input, mid + 1, end);
             int[] output = MergeHelper(part1, part2);
@@ -22,7 +22,7 @@ namespace dsa.Algorithms.Sorting
         }
 
         private static int[] MergeHelper(int[] p1, int[] p2)
-        {            
+        {
             int N1 = p1.Length;
             int N2 = p2.Length;
             int[] output = new int[N1 + N2];
@@ -31,37 +31,33 @@ namespace dsa.Algorithms.Sorting
             int index2 = 0;
             int index3 = 0;
 
-            while(index1 < N1)
+            while (index1 < N1 && index2 < N2)
             {
-                while(index2 < N2)
+                if (p1[index1] <= p2[index2])
                 {
-                    if(p1[index1] <= p2[index2])
-                    {
-                        output[index3] = p1[index1];
-                        index1++;
-                        index3++;                        
-                    }
-                    else
-                    {
-                        output[index3] = p2[index2];
-                        index2++;                         
-                    }
-                    index3++; 
+                    output[index3] = p1[index1];
+                    index1++;                    
                 }
+                else
+                {
+                    output[index3] = p2[index2];
+                    index2++;
+                }
+                index3++;
             }
 
-            while(index1 < N1)
+            while (index1 < N1)
             {
                 output[index3] = p1[index1];
                 index1++;
-                index3++;    
+                index3++;
             }
 
-            while(index2 < N2)
+            while (index2 < N2)
             {
                 output[index3] = p2[index2];
                 index2++;
-                index3++;    
+                index3++;
             }
 
             return output;
