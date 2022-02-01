@@ -141,6 +141,19 @@ namespace dsa
             //Console.WriteLine(MaxSubArraySum.GetSum2(new int[] {5,4,-1,7,8}));
             //Console.WriteLine(MaxSubArraySum.GetSum3(new int[] {5,4,-1,7,8}));
 
+            // int[] input = { 8,7,6,5,4,3,2,1,0 };
+            // foreach(var i in input)
+            // {
+            //    Console.Write(i + "\t");
+            // }
+            // Console.WriteLine("");
+
+            // int[] output = Merge.Sort(input);
+            // foreach (var i in output)
+            // {
+            //     Console.Write(i + "\t");
+            // }
+
             int[] input = { 8,7,6,5,4,3,2,1,0 };
             foreach(var i in input)
             {
@@ -148,7 +161,7 @@ namespace dsa
             }
             Console.WriteLine("");
 
-            int[] output = Merge.Sort(input);
+            int[] output = Quick.Sort(input);
             foreach (var i in output)
             {
                 Console.Write(i + "\t");
