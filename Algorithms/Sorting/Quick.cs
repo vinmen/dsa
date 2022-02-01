@@ -13,7 +13,7 @@ namespace dsa.Algorithms.Sorting
             if(l < h)
             {
                 int p = Partition(input, l, h);
-                QuickSortHelper(input, l, p);
+                QuickSortHelper(input, l, p - 1);
                 QuickSortHelper(input, p + 1, h);
             }
             return input;            
@@ -22,8 +22,7 @@ namespace dsa.Algorithms.Sorting
         private static int Partition(int[] input, int l, int h)
         {
             int pivot = input[h];
-            int i = l - 1;
-            i++;
+            int i = l - 1;          
             
             for(int j = l; j <= h - 1; j++)
             {
@@ -33,7 +32,7 @@ namespace dsa.Algorithms.Sorting
                     Swap(input, i, j);
                 }
             }
-            Swap(input, i + 1, h-1);
+            Swap(input, i + 1, h);
             return i + 1;
         }
 
