@@ -9,7 +9,7 @@ namespace dsa.Algorithms.Sorting
         }
 
         private static int[] QuickSortHelper(int[] input, int l, int h)
-        {
+        {            
             if(l < h)
             {
                 int p = Partition(input, l, h);
@@ -24,9 +24,9 @@ namespace dsa.Algorithms.Sorting
             int pivot = input[h];
             int i = l - 1;          
             
-            for(int j = l; j <= h - 1; j++)
+            for(int j = l; j < h; j++)
             {
-                if(input[j] <= pivot)
+                if(input[j] < pivot)
                 {
                     i++;
                     Swap(input, i, j);
