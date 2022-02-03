@@ -104,6 +104,24 @@ namespace dsa
             levelOrder.LevelOrder(tree);
         }
 
+        // public static int MaxProfit(int[] prices) 
+        // {
+        //     int N = prices.Length;
+        //     int max = 0;
+        //     System.Collections.Generic.Dictionary<int, int> hl = new  System.Collections.Generic.Dictionary<int, int>();
+
+        //     for(int i = 0; i < N - 1; i++)
+        //     {
+        //         if(prices[i] > prices[i + 1])
+        //             ht.Add(prices[i], "H");
+        //         else
+        //             ht.Add(prices[i], "L");
+        //     }
+
+            
+        //     return 0;
+        // }        
+
         static void Main()
         {
             //RunBracketTests();
@@ -154,18 +172,33 @@ namespace dsa
             //     Console.Write(i + "\t");
             // }
 
-            int[] input = { 8,7,6,5,4,3,2,1,0 };
-            foreach(var i in input)
+            // int[] input = { 8,7,6,5,4,3,2,1,0 };
+            // foreach(var i in input)
+            // {
+            //    Console.Write(i + "\t");
+            // }
+            // Console.WriteLine("");
+
+            // int[] output = Quick.Sort(input);
+            // foreach (var i in output)
+            // {
+            //     Console.Write(i + "\t");
+            // }              
+
+            int[] nums1 = {1,2,3,0,0,0};
+            int[] nums2 = {2,5,6};
+            foreach(var i in nums1)
             {
                Console.Write(i + "\t");
             }
             Console.WriteLine("");
-
-            int[] output = Quick.Sort(input);
-            foreach (var i in output)
+            MergeSortedArrays.Merge(nums1, 3, nums2, 3);
+            foreach(var i in nums1)
             {
-                Console.Write(i + "\t");
-            }        
+               Console.Write(i + "\t");
+            }
+            
+
         }
 
     }
