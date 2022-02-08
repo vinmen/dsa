@@ -106,7 +106,7 @@ namespace dsa
             levelOrder.LevelOrder(tree);
         }        
 
-        static void RunTests()
+        static void RunProblems()
         {
             //RunBracketTests();
             //RunStackTests();
@@ -182,13 +182,45 @@ namespace dsa
             //    Console.Write(i + "\t");
             // }
             
-            //Console.WriteLine(MaxProfit.GetMaxProfit(new int[] {7,6,4,3,1}));
+            //Console.WriteLine(MaxProfit.GetMaxProfit(new int[] {6,7,4,3,1,5}));
             
+        }
+
+        private static int parent(int i)
+        {
+            return (i - 1) / 2;
+        }
+
+        private static void swap(ref int input1, ref int input2)
+        {
+            int temp = input1;
+            input1 = input2;
+            input2 = temp;
+        }
+
+        public static int[] Heapify(int[] input, int n)
+        {
+            int i = n - 1;
+            while(i >= 0)
+            {
+                if(input[i] >= input[parent(i)])
+                {
+                    swap(ref input[i], ref input[parent(i)]);
+                }
+                i--;
+            } 
+
+            return input; 
         }
 
         static void Main()
         {
-
+            int[] input = {10, 40, 30, 20, 50, 100, 30};
+            int[] output = Heapify(input, 7);
+            foreach(var i in output)
+            {
+                Console.Write(i + "\t");
+            }
         }    
 
     }
