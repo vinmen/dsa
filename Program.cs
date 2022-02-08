@@ -106,7 +106,7 @@ namespace dsa
             levelOrder.LevelOrder(tree);
         }        
 
-        static void Main()
+        static void RunTests()
         {
             //RunBracketTests();
             //RunStackTests();
@@ -182,8 +182,14 @@ namespace dsa
             //    Console.Write(i + "\t");
             // }
             
-            Console.WriteLine(MaxProfit.GetMaxProfit(new int[] {7,6,4,3,1}));
+            //Console.WriteLine(MaxProfit.GetMaxProfit(new int[] {7,6,4,3,1}));
+            
         }
+
+        static void Main()
+        {
+
+        }    
 
     }
 }
