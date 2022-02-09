@@ -198,25 +198,16 @@ namespace dsa
             input2 = temp;
         }
 
-        public static int[] Heapify(int[] input, int n)
+        public static int[] Heapify(int[] input)
         {
-            int i = n - 1;
-            while(i >= 0)
-            {
-                if(input[i] >= input[parent(i)])
-                {
-                    swap(ref input[i], ref input[parent(i)]);
-                }
-                i--;
-            } 
-
+            
             return input; 
         }
 
         static void Main()
         {
             int[] input = {10, 40, 30, 20, 50, 100, 30};
-            int[] output = Heapify(input, 7);
+            int[] output = Heapify(input);
             foreach(var i in output)
             {
                 Console.Write(i + "\t");
