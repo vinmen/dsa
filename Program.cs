@@ -186,6 +186,16 @@ namespace dsa
             
         }
 
+        private static int left(int i)
+        {
+            return (2 * i) + 1;
+        }
+
+        private static int right(int i)
+        {
+            return (2 * i) + 2;
+        }
+
         private static int parent(int i)
         {
             return (i - 1) / 2;
@@ -198,20 +208,46 @@ namespace dsa
             input2 = temp;
         }
 
-        public static int[] Heapify(int[] input)
+        public static int[] Heapify(int[] arr)
         {
-            
-            return input; 
+            int N = arr.Length;
+            int i = N - 1;            
+            int temp;
+            while(i >= 0)
+            {
+                if(arr[i] > arr[parent(i)])
+                {
+                    swap(ref arr[i], ref arr[parent(i)]);
+                    temp = i;
+                    while(temp != 0 && left(temp) < N && right(temp) < N)
+                    {
+                        if(arr[left(temp)] > arr[right(temp)] && arr[temp] < arr[left(temp)])
+                        {
+                            swap(ref arr[temp], ref arr[left(temp)]);
+                            temp = left(temp);
+                        }
+                        else if(arr[right(temp)] > arr[left(temp)] && arr[temp] < arr[right(temp)])
+                        {
+                            swap(ref arr[temp], ref arr[right(temp)]);
+                            temp = right(temp);
+                        } 
+                        temp = 0;
+                    }
+                }
+                i--;
+            }
+            return arr; 
         }
 
         static void Main()
         {
-            int[] input = {10, 40, 30, 20, 50, 100, 30};
+            int[] input = {6, 5, 4, 3, 2, 1, 0};
             int[] output = Heapify(input);
             foreach(var i in output)
             {
                 Console.Write(i + "\t");
             }
+            Console.WriteLine("");
         }    
 
     }
