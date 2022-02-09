@@ -186,7 +186,53 @@ namespace dsa
             
         }
 
-        private static int left(int i)
+        private static int LeftChild(int[] arr, int index)
+        {
+            return arr[2 * index + 1];
+        }
+        private static int RightChild(int[] arr, int index)
+        {
+            return arr[2 * index + 2];
+        }
+        private static int Parent(int[] arr, int index)
+        {
+            return arr[(index - 1) / 2];
+        }
+        private static int LeftChildIndex(int index)
+        {
+            return 2 * index + 1;
+        }
+        private static int RightChildIndex(int index)
+        {
+            return 2 * index + 2;
+        }
+        private static int ParentIndex(int index)
+        {
+            return (index - 1) / 2;
+        }
+
+        private static bool LeftChildExists(int index, int heapSize)
+        {
+            if (heapSize < 2 * index + 1)
+                return true;
+            return false;
+        }
+
+        private static bool RightChildExists(int index, int heapSize)
+        {
+            if (heapSize < 2 * index + 2)
+                return true;
+            return false;
+        }
+
+        private static void Swap(int[] arr, int index1, int index2)
+        {
+            int temp = arr[index1];
+            arr[index1] = arr[index2];
+            arr[index2] = arr[index1];
+        }
+
+        private static int left(int i) 
         {
             return (2 * i) + 1;
         }
@@ -237,6 +283,12 @@ namespace dsa
                 i--;
             }
             return arr; 
+        }
+
+        public static int[] Heapify2(int[] arr)
+        {
+
+            return null;
         }
 
         static void Main()
