@@ -229,7 +229,7 @@ namespace dsa
         {
             int temp = arr[index1];
             arr[index1] = arr[index2];
-            arr[index2] = arr[index1];
+            arr[index2] = temp;
         }
 
         private static int left(int i) 
@@ -285,17 +285,76 @@ namespace dsa
             return arr; 
         }
 
-        public static int[] Heapify2(int[] arr)
+        public static void MinHeapify(int[] arr, int i)
         {
+            int N = arr.Length;
+            int left = 2 * i + 1;                            // left child                      
+            int right = 2 * i + 2;                           // right child
+            int smallest = i;
 
-            return null;
+            if(left < N && arr[left] < arr[i])
+                smallest = left;
+            
+            if(right < N && arr[right] < arr[smallest])     // compare against smallest of the two
+                smallest = right;
+
+            if(smallest != i)
+            {
+                Swap(arr, i, smallest);
+                MinHeapify(arr, smallest);
+            }
+        }
+
+        public static void GenerateMinHeap(int[] arr)
+        {
+            int N = arr.Length;
+            for(int i = (N/2) - 1; i >= 0; i--)
+            {
+                MinHeapify(arr, i);
+            }
+        }
+
+        public static void MaxHeapify(int[] arr, int i)
+        {
+            int N = arr.Length;
+            int left = 2 * i + 1;                           // left child
+            int right = 2 * i + 2;                          // right child
+            int largest = i;
+
+            if(left < N && arr[left] > arr[i])
+                largest = left;
+            
+            if(right < N && arr[right] > arr[largest])      // compare against largest of the two
+                largest = right;
+
+            if(largest != i)
+            {
+                Swap(arr, i, largest);
+                MaxHeapify(arr, largest);
+            }
+        }
+
+        public static void GenerateMaxHeap(int[] arr)
+        {
+            int N = arr.Length;
+            for(int i = (N/2) - 1; i >= 0; i--)
+            {
+                MaxHeapify(arr, i);
+            }
         }
 
         static void Main()
         {
-            int[] input = {6, 5, 4, 3, 2, 1, 0};
-            int[] output = Heapify(input);
-            foreach(var i in output)
+            int[] input = {0, 1, 2, 3, 4, 5, 6};
+            GenerateMaxHeap(input);
+            foreach(var i in input)
+            {
+                Console.Write(i + "\t");
+            }
+            Console.WriteLine("");
+            
+            GenerateMinHeap(input);
+            foreach(var i in input)
             {
                 Console.Write(i + "\t");
             }
