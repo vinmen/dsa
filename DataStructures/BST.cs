@@ -56,5 +56,23 @@ namespace dsa.DataStructures
             }            
         }
 
+        public void LevelOrder(Node root)
+        {
+            if(root == null)
+                return;
+                
+            Queue<Node> q = new Queue<Node>();
+            q.Enqueue(root);
+            while(q.Count > 0)
+            {
+                Node node = q.Dequeue();
+                Console.WriteLine(node.data);
+                if(node.left != null)
+                    q.Enqueue(node.left);
+                if(node.right != null)
+                    q.Enqueue(node.right);
+            }
+        }
+
     }
 }
