@@ -183,51 +183,6 @@ namespace dsa
             // }
             
             //Console.WriteLine(MaxProfit.GetMaxProfit(new int[] {6,7,4,3,1,5}));
-<<<<<<< HEAD
-
-            // int[] input = {0, 1, 2, 3, 4, 5, 6};
-            // GenerateMaxHeap(input);
-            // foreach(var i in input)
-            // {
-            //     Console.Write(i + "\t");
-            // }
-            // Console.WriteLine("");
-            
-            // GenerateMinHeap(input);
-            // foreach(var i in input)
-            // {
-            //     Console.Write(i + "\t");
-            // }
-            // Console.WriteLine("");
-            
-        }
-
-        private static int LeftChild(int[] arr, int index)
-        {
-            return arr[2 * index + 1];
-        }
-        private static int RightChild(int[] arr, int index)
-        {
-            return arr[2 * index + 2];
-        }
-        private static int Parent(int[] arr, int index)
-        {
-            return arr[(index - 1) / 2];
-        }
-        private static int LeftChildIndex(int index)
-        {
-            return 2 * index + 1;
-        }
-        private static int RightChildIndex(int index)
-        {
-            return 2 * index + 2;
-        }
-        private static int ParentIndex(int index)
-        {
-            return (index - 1) / 2;
-        }
-=======
->>>>>>> c87909d9ec4ab63fc4b91bf89fd7093634b2e18c
 
             // int[] input = {0, 1, 2, 3, 4, 5, 6};
             // GenerateMaxHeap(input);
@@ -365,14 +320,12 @@ namespace dsa
         }
         
         static void Main()
-<<<<<<< HEAD
-        { 
+        {
+
             BalanceBST problem = new BalanceBST();
             BST bst = problem.Solve(new int[] {5,10,15,30,40,50,60,70,80});
             bst.InOrder(); 
-        } 
-=======
-        {
+
             int[] arr = {3, 5, 4, 7, 2, 1};
             BST tree = new BST();
             foreach(int i in arr)
@@ -384,6 +337,5 @@ namespace dsa
 
             tree.LevelOrder(tree.root);       
         }   
->>>>>>> c87909d9ec4ab63fc4b91bf89fd7093634b2e18c
     }
 }
