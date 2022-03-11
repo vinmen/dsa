@@ -183,6 +183,7 @@ namespace dsa
             // }
             
             //Console.WriteLine(MaxProfit.GetMaxProfit(new int[] {6,7,4,3,1,5}));
+<<<<<<< HEAD
 
             // int[] input = {0, 1, 2, 3, 4, 5, 6};
             // GenerateMaxHeap(input);
@@ -225,26 +226,24 @@ namespace dsa
         {
             return (index - 1) / 2;
         }
+=======
+>>>>>>> c87909d9ec4ab63fc4b91bf89fd7093634b2e18c
 
-        private static bool LeftChildExists(int index, int heapSize)
-        {
-            if (heapSize < 2 * index + 1)
-                return true;
-            return false;
-        }
-
-        private static bool RightChildExists(int index, int heapSize)
-        {
-            if (heapSize < 2 * index + 2)
-                return true;
-            return false;
-        }
-
-        private static void Swap(int[] arr, int index1, int index2)
-        {
-            int temp = arr[index1];
-            arr[index1] = arr[index2];
-            arr[index2] = temp;
+            // int[] input = {0, 1, 2, 3, 4, 5, 6};
+            // GenerateMaxHeap(input);
+            // foreach(var i in input)
+            // {
+            //     Console.Write(i + "\t");
+            // }
+            // Console.WriteLine("");
+            
+            // GenerateMinHeap(input);
+            // foreach(var i in input)
+            // {
+            //     Console.Write(i + "\t");
+            // }
+            // Console.WriteLine("");
+            
         }
 
         private static int left(int i) 
@@ -298,6 +297,13 @@ namespace dsa
                 i--;
             }
             return arr; 
+        }
+
+        private static void Swap(int[] arr, int index1, int index2)
+        {
+            int temp = arr[index1];
+            arr[index1] = arr[index2];
+            arr[index2] = temp;
         }
 
         public static void MinHeapify(int[] arr, int i)
@@ -357,12 +363,27 @@ namespace dsa
                 MaxHeapify(arr, i);
             }
         }
-
+        
         static void Main()
+<<<<<<< HEAD
         { 
             BalanceBST problem = new BalanceBST();
             BST bst = problem.Solve(new int[] {5,10,15,30,40,50,60,70,80});
             bst.InOrder(); 
         } 
+=======
+        {
+            int[] arr = {3, 5, 4, 7, 2, 1};
+            BST tree = new BST();
+            foreach(int i in arr)
+            {
+                tree.Insert(i);
+            }
+
+            tree.InOrder();     
+
+            tree.LevelOrder(tree.root);       
+        }   
+>>>>>>> c87909d9ec4ab63fc4b91bf89fd7093634b2e18c
     }
 }
