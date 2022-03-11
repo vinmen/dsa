@@ -183,6 +183,21 @@ namespace dsa
             // }
             
             //Console.WriteLine(MaxProfit.GetMaxProfit(new int[] {6,7,4,3,1,5}));
+
+            // int[] input = {0, 1, 2, 3, 4, 5, 6};
+            // GenerateMaxHeap(input);
+            // foreach(var i in input)
+            // {
+            //     Console.Write(i + "\t");
+            // }
+            // Console.WriteLine("");
+            
+            // GenerateMinHeap(input);
+            // foreach(var i in input)
+            // {
+            //     Console.Write(i + "\t");
+            // }
+            // Console.WriteLine("");
             
         }
 
@@ -344,22 +359,10 @@ namespace dsa
         }
 
         static void Main()
-        {
-            int[] input = {0, 1, 2, 3, 4, 5, 6};
-            GenerateMaxHeap(input);
-            foreach(var i in input)
-            {
-                Console.Write(i + "\t");
-            }
-            Console.WriteLine("");
-            
-            GenerateMinHeap(input);
-            foreach(var i in input)
-            {
-                Console.Write(i + "\t");
-            }
-            Console.WriteLine("");
-        }    
-
+        { 
+            BalanceBST problem = new BalanceBST();
+            BST bst = problem.Solve(new int[] {5,10,15,30,40,50,60,70,80});
+            bst.InOrder(); 
+        } 
     }
 }
