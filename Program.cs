@@ -321,7 +321,6 @@ namespace dsa
         
         static void Main()
         {
-
             BalanceBST problem = new BalanceBST();
             BST bst = problem.Solve(new int[] {5,10,15,30,40,50,60,70,80});
             bst.InOrder(); 
@@ -334,7 +333,6 @@ namespace dsa
             }
 
             tree.InOrder();     
-
             tree.LevelOrder(tree.root);       
         }   
     }
